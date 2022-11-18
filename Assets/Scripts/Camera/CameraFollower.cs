@@ -16,10 +16,10 @@ public class CameraFollower : MonoBehaviour
         var nextPosition = Vector3.Lerp(transform.position, _targetObject.transform.position + _offset, _smoothing * Time.deltaTime);
         transform.position = nextPosition;
     }
+}
 
         
         
-}
         
     
         

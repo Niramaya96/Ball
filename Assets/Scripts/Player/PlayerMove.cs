@@ -5,6 +5,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private Transform _camera;
     [SerializeField] private float _torqueValue;
+    [SerializeField] private float _jumpForce;
 
     private Rigidbody _rigitbody;
     private void Start()
@@ -29,6 +30,6 @@ public class PlayerMove : MonoBehaviour
     }
     private void Jump()
     {
-        _rigitbody.AddForce(Vector3.up * 3f,ForceMode.VelocityChange);
+        _rigitbody.AddForce(Vector3.up * _jumpForce,ForceMode.VelocityChange);
     }
 }
