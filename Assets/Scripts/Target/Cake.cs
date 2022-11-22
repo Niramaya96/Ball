@@ -3,15 +3,23 @@ using UnityEngine.Events;
 
 public class Cake : MonoBehaviour
 {
-    [SerializeField] private int _health;
+    [SerializeField] private int _maxHealth;
 
-    public event UnityAction<int> HealthChanged;
+    private int _currentHealth;
+
+    public event UnityAction<int,int> HealthChanged;
     public event UnityAction GameOver;
-   public void ApplyDamage(int damage)
+
+    private void Start()
+    {
+        _currentHealth = _maxHealth;
+    }
+    public void ApplyDamage(int damage)
    {
-        _health -= damage;
-        HealthChanged?.Invoke(_health);
-        if (_health <= 0)
+        _currentHealth -= damage;
+        HealthChanged?.Invoke(_currentHealth,_maxHealth);
+
+        if (_maxHealth <= 0)
         {
             GameOver?.Invoke();
             Destroy(gameObject);
