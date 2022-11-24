@@ -12,7 +12,7 @@ public class AttackState : State
     
     private void Update()
     {
-        if (_lastAttackTime <= 0)
+        if (_lastAttackTime <= 0 && Target != null)
         {
             Attack(Target);
             _lastAttackTime = _delay;

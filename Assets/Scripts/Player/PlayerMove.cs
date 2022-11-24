@@ -17,19 +17,11 @@ public class PlayerMove : MonoBehaviour
     {
         Move();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Jump();
-    }
-
+  
     private void Move()
     {
         _rigitbody.AddTorque(_camera.right * Input.GetAxis("Vertical") * _torqueValue);
         _rigitbody.AddTorque(-_camera.forward * Input.GetAxis("Horizontal") * _torqueValue);
     }
-    private void Jump()
-    {
-        _rigitbody.AddForce(Vector3.up * _jumpForce,ForceMode.VelocityChange);
-    }
+    
 }

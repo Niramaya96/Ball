@@ -719,7 +719,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 2
-  _reward: 1
 --- !u!114 &2093886379020335245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,8 +806,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 2093886379020335249}
-  _transitionRange: 1.2
-  _rangeSpread: 1
+  _transitionRange: 1
+  _rangeSpread: 0.5
 --- !u!1 &2093886379080165419
 GameObject:
   m_ObjectHideFlags: 0

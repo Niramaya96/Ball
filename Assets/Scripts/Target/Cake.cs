@@ -19,7 +19,7 @@ public class Cake : MonoBehaviour
         _currentHealth -= damage;
         HealthChanged?.Invoke(_currentHealth,_maxHealth);
 
-        if (_maxHealth <= 0)
+        if (_currentHealth <= 0)
         {
             GameOver?.Invoke();
             Destroy(gameObject);
