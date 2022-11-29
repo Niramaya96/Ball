@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class Menu : MonoBehaviour
 {
     [SerializeField] private Cake _cake;

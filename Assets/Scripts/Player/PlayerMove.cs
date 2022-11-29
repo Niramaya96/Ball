@@ -5,7 +5,6 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private Transform _camera;
     [SerializeField] private float _torqueValue;
-    [SerializeField] private float _jumpForce;
 
     private Rigidbody _rigitbody;
     private void Start()
