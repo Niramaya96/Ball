@@ -1,10 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int _health;
-    
+    [SerializeField] private ParticleSystem _bang;
+
     private Cake _target;
     public Cake Target => _target;
 
@@ -13,12 +14,10 @@ public class Enemy : MonoBehaviour
         _target = target;
     }
 
-    public void TakeDamage(int damage)
+    public void DestroyEnemy()
     {
-        _health -= damage;
-
-        if (_health <= 0)
-        Destroy(gameObject);
+        _bang.Play();
+        Destroy(gameObject,0.2f);
     }
 }
         

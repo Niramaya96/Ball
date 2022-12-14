@@ -24,4 +24,5 @@ public class AttackState : State
         _animator.Play("Attack 02");
         target.ApplyDamage(_damage);
     }
+
 }

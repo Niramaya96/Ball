@@ -9,7 +9,7 @@ public class MoveState : State
     private Rigidbody _rigidbody;
     private Vector3 _directionToTarget;
     
-    private void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
     }

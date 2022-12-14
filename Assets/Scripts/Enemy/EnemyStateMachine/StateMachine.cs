@@ -4,21 +4,21 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
     [SerializeField] private State _startState;
+    [SerializeField] private Enemy _enemy;
 
     private Cake _target;
     private State _currentState;
 
     public State Current => _currentState;
-   
+
     private void Start()
     {
         _target = GetComponent<Enemy>().Target;
-        SetStartState(_startState);
-
+        SetStartState();
     }
-    private void SetStartState(State startState)
+    private void SetStartState()
     {
-        _currentState = startState;
+        _currentState = _startState;
 
         if (_currentState != null)
             _currentState.Enter(_target);
@@ -32,8 +32,7 @@ public class StateMachine : MonoBehaviour
         if (nextState != null)
             Transit(nextState);
     }
-        
-        
+           
     private void Transit(State nextState)
     {
         if (_currentState != null)
@@ -43,7 +42,4 @@ public class StateMachine : MonoBehaviour
         if (_currentState != null)
             _currentState.Enter(_target);
     }
-
-
 }
-        

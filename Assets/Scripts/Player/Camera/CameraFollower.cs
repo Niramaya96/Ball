@@ -5,7 +5,7 @@ public class CameraFollower : MonoBehaviour
     [SerializeField] private GameObject _targetObject;
     [SerializeField] private float _smoothing = 15f;
     
-    private Vector3 _offset = new Vector3(0,8,-7);
+    private Vector3 _offset = new Vector3(0,8,-6);
 
     private void FixedUpdate()
     {

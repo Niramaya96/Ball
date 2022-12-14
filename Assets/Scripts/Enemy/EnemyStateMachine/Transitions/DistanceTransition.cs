@@ -12,14 +12,14 @@ public class DistanceTransition : Transition
     private void Update()
     {
         if (Target == null)
-        {
-            NeedTransit = true;
-        }
-        else if (Vector3.Distance(transform.position, Target.transform.position) < _transitionRange)
+            return;
+
+
+        if (Vector3.Distance(transform.position, Target.transform.position) < _transitionRange)
         {
                 NeedTransit = true;
         }
-        
+ 
     }
 }
         

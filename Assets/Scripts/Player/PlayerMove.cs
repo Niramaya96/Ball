@@ -5,12 +5,13 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private Transform _camera;
     [SerializeField] private float _torqueValue;
+    [SerializeField] private FloatingJoystick _joystick;
 
     private Rigidbody _rigitbody;
     private void Start()
     {
         _rigitbody = GetComponent<Rigidbody>();
-        _rigitbody.maxAngularVelocity = 10f;
+        _rigitbody.maxAngularVelocity = 15f;
     }
     private void FixedUpdate()
     {
@@ -19,8 +20,8 @@ public class PlayerMove : MonoBehaviour
   
     private void Move()
     {
-        _rigitbody.AddTorque(_camera.right * Input.GetAxis("Vertical") * _torqueValue);
-        _rigitbody.AddTorque(-_camera.forward * Input.GetAxis("Horizontal") * _torqueValue);
+        _rigitbody.AddTorque(_camera.right * _joystick.Vertical * _torqueValue);
+        _rigitbody.AddTorque(-_camera.forward * _joystick.Horizontal * _torqueValue);
     }
     
 }
